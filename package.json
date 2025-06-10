@@ -1,0 +1,21 @@
+{
+  "name": "bandwidth_selling",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.3"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node",
+    "start": "bun run main.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "dockernode": "^0.1.0",
+    "express": "^5.1.0"
+  }
+}
