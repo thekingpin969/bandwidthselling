@@ -1,0 +1,328 @@
+[
+  {
+    "Id": "c025f29461eccd3f9991874bba9e03c3af0849acb480e59aa72b8716aaa6d069",
+    "Names": [
+      "/kingpin_iproyalpawns_104_239_105_125"
+    ],
+    "Image": "iproyal/pawns-cli:latest",
+    "ImageID": "sha256:20380eb15d39f20c5d5e1531cc31a7ca8e1c3a7e5b2a4b404351672b0b56b4bd",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:35138d03ffd7d33b6484d8e5b81aa555b5e9a414975168cd1a5f841dd90a69e9",
+      "size": 671,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/pawns-cli -accept-tos -email thunderfooot2255@gmail.com -password cch9szwd26 -device-name kingpin_104_239_105_125 -device-id id_kingpin_104_239_105_125",
+    "Created": 1749653513,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_104_239_105_125"
+    },
+    "State": "running",
+    "Status": "Up About a minute",
+    "HostConfig": {
+      "NetworkMode": "container:99c7a16c4538c5e92802513eb2bc061572f204a7e558c3627028722662420fe8"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "d21e34f4297eb660d020f2d31ed807a28b185ba6bfd59f0c2473619fd16ca10a",
+    "Names": [
+      "/kingpin_honeygain_104_239_105_125"
+    ],
+    "Image": "honeygain/honeygain:latest",
+    "ImageID": "sha256:56568cc7c554af248c0d106f2c21b9f6cc4527815d03d49d81040c6dfc8311e3",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:ddd7f5a6f5131fe71b47d6c77c142dac1a6ba2b5d5de7d71508a14922e262e79",
+      "size": 1625,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "./honeygain -tou-accept -email thunderfooot2255@gmail.com -pass cch9szwd26 -device kingpin_honeygain_104_239_105_125",
+    "Created": 1749653513,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_104_239_105_125"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "container:99c7a16c4538c5e92802513eb2bc061572f204a7e558c3627028722662420fe8"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "62f4cebefcbc6227fd077362cf3482ff3c9e59434afae5d09646fbccfbb58b16",
+    "Names": [
+      "/kingpin_repocket_104_239_105_125"
+    ],
+    "Image": "repocket/repocket:latest",
+    "ImageID": "sha256:5888d756de7e0e74b95b5eb08bb93f4240a0ce840c910a7e528d1143ad0c502b",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:90b13dfc7f85c7cfc4dc7b4e941f255ee37a047a7768de1cfa661df50a123f65",
+      "size": 1812,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/bin/sh -c 'node dist/index.js'",
+    "Created": 1749653512,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_104_239_105_125"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "container:99c7a16c4538c5e92802513eb2bc061572f204a7e558c3627028722662420fe8"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "99c7a16c4538c5e92802513eb2bc061572f204a7e558c3627028722662420fe8",
+    "Names": [
+      "/kingpin_tun2socks_104_239_105_125"
+    ],
+    "Image": "xjasonlyu/tun2socks",
+    "ImageID": "sha256:fe73eaa0d55e5e8ff60999e86a2d30460d2fc3bab9507980045fefe19a5a7361",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:bfc6bb5093012bcc48358b6c6ae14136f313e656e368b424def318f682151e1b",
+      "size": 1053,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/entrypoint.sh",
+    "Created": 1749653511,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/binds/0/Source": "/dev/net/tun",
+      "desktop.docker.io/binds/0/SourceKind": "wsl2DistroFile",
+      "desktop.docker.io/binds/0/Target": "/dev/net/tun",
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack",
+      "org.opencontainers.image.source": "https://github.com/xjasonlyu/tun2socks"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "bridge"
+    },
+    "NetworkSettings": {
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "MacAddress": "ae:6d:27:20:e8:a2",
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "46dc8ef0b5f67247ffaf76cf15c88aa993afd82acba75be95b9acec287a119a3",
+          "EndpointID": "5667918cb4341b7cd6944777b9f1675d6fcbbaa8722731211a1d571a5cc6420a",
+          "Gateway": "172.17.0.1",
+          "IPAddress": "172.17.0.3",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/e475e4f84132237ffa8e914a5fa28bff8996aed52ad9199d0f8cdc8d3f976804",
+        "Destination": "/dev/net/tun",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "Id": "0bb272651c3c554e9bf27f61f82d8c5f742dba59d24f10abbe563d0c380c3643",
+    "Names": [
+      "/kingpin_iproyalpawns_216_10_27_159"
+    ],
+    "Image": "iproyal/pawns-cli:latest",
+    "ImageID": "sha256:20380eb15d39f20c5d5e1531cc31a7ca8e1c3a7e5b2a4b404351672b0b56b4bd",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:35138d03ffd7d33b6484d8e5b81aa555b5e9a414975168cd1a5f841dd90a69e9",
+      "size": 671,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/pawns-cli -accept-tos -email thunderfooot2255@gmail.com -password cch9szwd26 -device-name kingpin_216_10_27_159 -device-id id_kingpin_216_10_27_159",
+    "Created": 1749653509,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_216_10_27_159"
+    },
+    "State": "running",
+    "Status": "Up About a minute",
+    "HostConfig": {
+      "NetworkMode": "container:5eabba80f78218d3b91b28fb5039a9b4870c3617a9ab864233233d37e428ff3a"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "b184e5b2b173c6394c04708f513181f381d0676116238044542979b4af4df283",
+    "Names": [
+      "/kingpin_honeygain_216_10_27_159"
+    ],
+    "Image": "honeygain/honeygain:latest",
+    "ImageID": "sha256:56568cc7c554af248c0d106f2c21b9f6cc4527815d03d49d81040c6dfc8311e3",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:ddd7f5a6f5131fe71b47d6c77c142dac1a6ba2b5d5de7d71508a14922e262e79",
+      "size": 1625,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "./honeygain -tou-accept -email thunderfooot2255@gmail.com -pass cch9szwd26 -device kingpin_honeygain_216_10_27_159",
+    "Created": 1749653509,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_216_10_27_159"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "container:5eabba80f78218d3b91b28fb5039a9b4870c3617a9ab864233233d37e428ff3a"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "d347e66d53f179a300b7658fd038a3bb535564e06b88ed8d283b6918a72717d4",
+    "Names": [
+      "/kingpin_repocket_216_10_27_159"
+    ],
+    "Image": "repocket/repocket:latest",
+    "ImageID": "sha256:5888d756de7e0e74b95b5eb08bb93f4240a0ce840c910a7e528d1143ad0c502b",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:90b13dfc7f85c7cfc4dc7b4e941f255ee37a047a7768de1cfa661df50a123f65",
+      "size": 1812,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/bin/sh -c 'node dist/index.js'",
+    "Created": 1749653509,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack_216_10_27_159"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "container:5eabba80f78218d3b91b28fb5039a9b4870c3617a9ab864233233d37e428ff3a"
+    },
+    "NetworkSettings": {
+      "Networks": {}
+    },
+    "Mounts": []
+  },
+  {
+    "Id": "5eabba80f78218d3b91b28fb5039a9b4870c3617a9ab864233233d37e428ff3a",
+    "Names": [
+      "/kingpin_tun2socks_216_10_27_159"
+    ],
+    "Image": "xjasonlyu/tun2socks",
+    "ImageID": "sha256:fe73eaa0d55e5e8ff60999e86a2d30460d2fc3bab9507980045fefe19a5a7361",
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:bfc6bb5093012bcc48358b6c6ae14136f313e656e368b424def318f682151e1b",
+      "size": 1053,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    },
+    "Command": "/entrypoint.sh",
+    "Created": 1749653508,
+    "Ports": [],
+    "Labels": {
+      "desktop.docker.io/binds/0/Source": "/dev/net/tun",
+      "desktop.docker.io/binds/0/SourceKind": "wsl2DistroFile",
+      "desktop.docker.io/binds/0/Target": "/dev/net/tun",
+      "desktop.docker.io/wsl-distro": "Ubuntu",
+      "group": "kingpin-stack",
+      "org.opencontainers.image.source": "https://github.com/xjasonlyu/tun2socks"
+    },
+    "State": "running",
+    "Status": "Up 28 minutes",
+    "HostConfig": {
+      "NetworkMode": "bridge"
+    },
+    "NetworkSettings": {
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "MacAddress": "72:0c:1e:86:dd:6c",
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "46dc8ef0b5f67247ffaf76cf15c88aa993afd82acba75be95b9acec287a119a3",
+          "EndpointID": "2fb9b087806ead04a3edddc149a81a48a7d6041e1a4e73976ef7d6b3f37e02f5",
+          "Gateway": "172.17.0.1",
+          "IPAddress": "172.17.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/e475e4f84132237ffa8e914a5fa28bff8996aed52ad9199d0f8cdc8d3f976804",
+        "Destination": "/dev/net/tun",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  }
+]
