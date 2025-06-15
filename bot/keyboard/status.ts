@@ -1,5 +1,6 @@
 import type { Context } from "telegraf";
 import getStatus from "../../helpers/getStatus";
+import formatBytes from "../../utils/formateBytes";
 
 async function Status(ctx: Context) {
     try {
@@ -27,9 +28,18 @@ async function Status(ctx: Context) {
             return { name: item, statuses: itemStatus }
         })
 
+        const totalTraffic: number | undefined = appStatus.filter((i: any) => i.name != 'tun2socks').reduce((acc: any, item: any) => {
+            let t
+            Object.keys(item.statuses).forEach((r) => {
+                const traffic = item.statuses[r].traffic.out
+                t = acc + +traffic
+            })
+            return t
+        }, 0)
+
         ctx.deleteMessage(placeHolder.message_id)
-        ctx.replyWithHTML(`Your Bandly Status:\n\nStatus: ${runningStatus}\nBandWidth Soled: 12.45 gb\nUptime for: <u>3 days & 12 hours</u>\n\nDetailed Breakdown:\n----------------------------------------------\n${appStatus.map((item: any) => {
-            return `<blockquote>${item.name.toUpperCase()}</blockquote>\n  • Status: running 🔄\n  • Bandwidth sold: 736.32 mb\n  • Running for: <u>3 days & 12 hours</u>\n`
+        ctx.replyWithHTML(`Your Bandly Status:\n\nStatus: ${runningStatus}\nBandWidth Soled: ${formatBytes(totalTraffic)}\nUptime for: <u>3 days & 12 hours</u>\n\nDetailed Breakdown:\n----------------------------------------------\n${appStatus.map((item: any) => {
+            return `<blockquote>${item.name.toUpperCase()}</blockquote>\n  • Status: running 🔄\n  • Bandwidth sold: ${formatBytes(Object.keys(item.statuses).reduce((acc: any, i: any) => { return acc + item.statuses[i].traffic.out }, 0))}\n  • Running for: <u>3 days & 12 hours</u>\n`
         }).join('')}`)
 
     } catch (error) {

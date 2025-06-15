@@ -1,17 +1,28 @@
-import express from 'express'
+import { Hono } from 'hono'
+import { stream, streamText, streamSSE } from 'hono/streaming'
 import coldStart from './helpers/coldStart'
+import { serve } from 'bun'
+import getLLogs from './routes/getLogs'
+import { cors } from 'hono/cors'
+import getModules from './routes/getModules'
 
-const app = express()
-const port = 3000
-
-await coldStart()
+// await coldStart()
 await import('./bot/bot')
 await import('./database/redis')
 const { config } = await import('dotenv')
 config({ path: './.env' })
 
-app.get('/', (req, res) => { res.sendStatus(200) })
+const app = new Hono()
 
-app.listen(port, () => {
-    console.log(`server running on port ${port}`)
+app.use('*', cors({ origin: '*' }))
+
+app.get('/', (c) => c.text('OK'))
+app.get('/getLogs/:name', getLLogs)
+app.get('/getModules', getModules)
+
+
+serve({
+    fetch: app.fetch,
+    port: 3000,
 })
+console.log('server running on port 3000')

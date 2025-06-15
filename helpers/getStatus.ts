@@ -16,7 +16,7 @@ async function getStatus() {
 
             const traffic = Object.keys(networks).reduce((acc: any, key: any) => {
                 const network = networks[key]
-                return { in: (acc.in + network?.rx_bytes) / 1024, out: (acc.out + network?.tx_bytes) / 1024 }
+                return { in: (acc.in + network?.rx_bytes), out: (acc.out + network?.tx_bytes) }
             }, { in: 0, out: 0 })
 
             const name: any = cont.Names[0]?.replace('/', '')
