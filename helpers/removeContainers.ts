@@ -7,7 +7,7 @@ async function removeAllContainers() {
     for (const info of containers) {
         const container = docker.getContainer(info.Id);
         try {
-            (info.State === 'running' || info.State === 'paused') && await container.stop();
+            (info.State === 'running' || info.State === 'paused' || info.State === 'restarting') && await container.stop();
             await container.remove();
         } catch (err) {
             console.error(`Error removing ${info.Id}:`, err);
