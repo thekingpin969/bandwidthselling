@@ -19,41 +19,49 @@ import pauseModules from './actions/pauseModules';
 import startModules from './actions/startModules';
 import restartModules from './actions/restartModules';
 import start from './commands/start';
+import deleteMessage from './helpers/deleteMessage';
 
 const bot = new Telegraf(process.env.BOT_TOKEN || '')
 
-bot.start(start);
+try {
+    bot.start(start);
 
-bot.use((ctx, next) => {
-    ctx.deleteMessage()
-    next()
-})
+    bot.use(async (ctx: any, next) => {
+        try {
+            if (!ctx.update.callback_query) deleteMessage(ctx)
+            await next()
+        } catch (error) { await next() }
+    })
 
-bot.hears('Status', Status)
-bot.hears('Restart', restart)
-bot.hears('Stop/Start', stopOrStart)
-bot.hears('Pause/Resume', pauseResume)
-bot.hears('App details', appDetails)
+    bot.hears('Status', Status)
+    bot.hears('Restart', restart)
+    bot.hears('App details', appDetails)
+    bot.hears('Stop/Start', stopOrStart)
+    bot.hears('Pause/Resume', pauseResume)
 
-bot.action('stopeApps', stopApps)
-bot.action('startApps', startApps)
-bot.action('pauseApps', pauseApps)
-bot.action('hard_restart', hardRestart)
-bot.action('soft_restart', softRestart)
-bot.action(/appDetails:(.+)/, appDetailsAction)
-bot.action(/stopApp:(.+)/, stopApp)
-bot.action(/stopModules:(.+)/, stopModules)
-bot.action(/startApp:(.+)/, startApp)
-bot.action(/startModules:(.+)/, startModules)
-bot.action(/pauseApp:(.+)/, pauseApp)
-bot.action(/pauseModules:(.+)/, pauseModules)
-bot.action(/restartApp:(.+)/, restartApp)
-bot.action(/restartModules:(.+)/, restartModules)
-bot.action('close', (ctx) => ctx.deleteMessage())
-bot.action('cancel_restart', (ctx) => ctx.editMessageText('restart cancelled'))
+    bot.action('stopApps', stopApps)
+    bot.action('pauseApps', pauseApps)
+    bot.action('startApps', startApps)
+    bot.action(/stopApp:(.+)/, stopApp)
+    bot.action(/startApp:(.+)/, startApp)
+    bot.action(/pauseApp:(.+)/, pauseApp)
+    bot.action('hard_restart', hardRestart)
+    bot.action('soft_restart', softRestart)
+    bot.action(/restartApp:(.+)/, restartApp)
+    bot.action(/stopModules:(.+)/, stopModules)
+    bot.action(/pauseModules:(.+)/, pauseModules)
+    bot.action(/startModules:(.+)/, startModules)
+    bot.action(/appDetails:(.+)/, appDetailsAction)
+    bot.action(/restartModules:(.+)/, restartModules)
+    bot.action('close', async (ctx) => await ctx.deleteMessage())
+    bot.action('cancel_restart', async (ctx) => await ctx.editMessageText('restart cancelled'))
 
-bot.launch()
-console.log('tg bot running...')
+    bot.launch()
+
+    console.log('tg bot running...')
+} catch (error) {
+    console.error(error)
+}
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));

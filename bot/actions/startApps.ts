@@ -26,7 +26,8 @@ async function startApps(ctx: any) {
 
             }
         } else {
-            ctx.answerCbQuery(`try again`).catch()
+            ctx.answerCbQuery(`trying again`).catch()
+            await startApps(ctx)
         }
     } catch (error) {
         throw error
