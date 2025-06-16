@@ -1,12 +1,11 @@
 import { Hono } from 'hono'
-import { stream, streamText, streamSSE } from 'hono/streaming'
 import coldStart from './helpers/coldStart'
 import { serve } from 'bun'
 import getLLogs from './routes/getLogs'
 import { cors } from 'hono/cors'
 import getModules from './routes/getModules'
 
-// await coldStart()
+await coldStart()
 await import('./bot/bot')
 await import('./database/redis')
 const { config } = await import('dotenv')

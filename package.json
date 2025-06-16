@@ -4,6 +4,7 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/cors": "^2.8.19",
+    "@types/dockerode": "^3.3.40",
     "@types/express": "^5.0.3"
   },
   "scripts": {
@@ -14,14 +15,11 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@types/dockerode": "^3.3.40",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
-    "dockernode": "^0.1.0",
     "dockerode": "^4.0.7",
     "express": "^5.1.0",
     "hono": "^4.7.11",
-    "https-proxy-agent": "^7.0.6",
     "redis": "^5.5.6",
     "telegraf": "^4.16.3"
   }
