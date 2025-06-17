@@ -26,12 +26,12 @@ const bot = new Telegraf(process.env.BOT_TOKEN || '')
 try {
     bot.start(start);
 
-    bot.use(async (ctx: any, next) => {
-        try {
-            if (!ctx.update.callback_query) deleteMessage(ctx)
-            await next()
-        } catch (error) { await next() }
-    })
+    // bot.use(async (ctx: any, next) => {
+    //     try {
+    //         if (!ctx.update.callback_query) deleteMessage(ctx)
+    //         await next()
+    //     } catch (error) { await next() }
+    // })
 
     bot.hears('Status', Status)
     bot.hears('Restart', restart)
